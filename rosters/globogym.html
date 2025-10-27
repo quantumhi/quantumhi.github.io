@@ -1,87 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Globogym Roster</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Globogym Roster | HCIBB</title>
+  <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #151515;
-      --accent: #e50914;
-      --text-light: #f5f5f5;
-      --radius: 12px;
-      --shadow: 0 4px 20px rgba(229, 9, 20, 0.25);
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
-      margin: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      align-self: flex-start;
-    }
-
-    a:hover {
-      text-shadow: 0 0 6px var(--accent);
-    }
-
-    h1 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .roster-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.5rem 2rem;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      background: #1a1a1a;
-      padding: 0.8rem 1rem;
-      margin: 0.4rem 0;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    li:hover {
-      background: #2a0000;
-    }
-  </style>
 </head>
 <body>
-  <a href="../index.html">← Back to Standings</a>
-  <h1>Globogym Roster</h1>
-  <div class="roster-card">
-    <ul>
-      <li>White Goodman (Captain)</li>
-      <li>Blade Blazer</li>
-      <li>Laser Lazer</li>
-      <li>Fran Stalinovskovichdavidovitchsky</li>
-      <li>Michelle</li>
-    </ul>
-  </div>
+  <header>
+    <h1>🏀 Globogym</h1>
+    <p class="subtitle">Team Roster | 2025 Season</p>
+  </header>
+
+  <main class="roster-container">
+    <div class="roster-card">
+      <h2>Players</h2>
+      <table class="roster-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Height</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Ben Stiller</td><td>Guard</td><td>6'1"</td><td>Senior</td></tr>
+          <tr><td>2</td><td>Vince Vaughn</td><td>Forward</td><td>6'4"</td><td>Senior</td></tr>
+          <tr><td>3</td><td>Justin Long</td><td>Guard</td><td>5'11"</td><td>Junior</td></tr>
+          <tr><td>4</td><td>Jason Bateman</td><td>Center</td><td>6'6"</td><td>Senior</td></tr>
+          <tr><td>5</td><td>Alan Tudyk</td><td>Forward</td><td>6'3"</td><td>Sophomore</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a href="../index.html" class="back-button">← Back to Standings</a>
+  </main>
+
+  <footer>
+    © HCIBB 2025
+  </footer>
 </body>
 </html>
-
