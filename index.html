@@ -130,6 +130,18 @@
       color: var(--text-light);
     }
 
+    /* --- TEAM LINKS --- */
+    .team-name a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .team-name a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 5px var(--accent);
+    }
+
     /* --- FOOTER --- */
     footer {
       margin-top: auto;
@@ -155,7 +167,7 @@
 <body>
   <header>
     <h1>🏀 Haverford Intramural Basketball Standings</h1>
-    <p class="subtitle"> 2025 | Updated Weekly</p>
+    <p class="subtitle">2025 | Updated Weekly</p>
   </header>
 
   <div class="search-bar">
@@ -174,13 +186,12 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Win % will be recalculated on load -->
-      <tr><td>1</td><td class="team-name">Globogym</td><td>12</td><td>2</td><td class="pct">0.857</td></tr>
-      <tr><td>2</td><td class="team-name">Iron Wolves</td><td>10</td><td>4</td><td class="pct">0.714</td></tr>
-      <tr><td>3</td><td class="team-name">Shadow Falcons</td><td>8</td><td>6</td><td class="pct">0.571</td></tr>
-      <tr><td>4</td><td class="team-name">Steel Titans</td><td>6</td><td>8</td><td class="pct">0.429</td></tr>
-      <tr><td>5</td><td class="team-name">Blaze Lions</td><td>4</td><td>10</td><td class="pct">0.286</td></tr>
-      <tr><td>6</td><td class="team-name">Storm Sharks</td><td>3</td><td>11</td><td class="pct">0.214</td></tr>
+      <tr><td>1</td><td class="team-name"><a href="rosters/globogym.html">Globogym</a></td><td>12</td><td>2</td><td class="pct">0.857</td></tr>
+      <tr><td>2</td><td class="team-name"><a href="rosters/iron-wolves.html">Iron Wolves</a></td><td>10</td><td>4</td><td class="pct">0.714</td></tr>
+      <tr><td>3</td><td class="team-name"><a href="rosters/shadow-falcons.html">Shadow Falcons</a></td><td>8</td><td>6</td><td class="pct">0.571</td></tr>
+      <tr><td>4</td><td class="team-name"><a href="rosters/steel-titans.html">Steel Titans</a></td><td>6</td><td>8</td><td class="pct">0.429</td></tr>
+      <tr><td>5</td><td class="team-name"><a href="rosters/blaze-lions.html">Blaze Lions</a></td><td>4</td><td>10</td><td class="pct">0.286</td></tr>
+      <tr><td>6</td><td class="team-name"><a href="rosters/storm-sharks.html">Storm Sharks</a></td><td>3</td><td>11</td><td class="pct">0.214</td></tr>
     </tbody>
   </table>
 
