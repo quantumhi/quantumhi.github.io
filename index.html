@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basketball League Standings</title>
 
-  <!-- Poppins font -->
+  <!-- Font + CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -33,12 +31,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td class="team-name"><a href="rosters/globogym.html">Globogym</a></td><td>12</td><td>2</td><td class="pct">0.857</td></tr>
-      <tr><td>2</td><td class="team-name"><a href="rosters/iron-wolves.html">Iron Wolves</a></td><td>10</td><td>4</td><td class="pct">0.714</td></tr>
-      <tr><td>3</td><td class="team-name"><a href="rosters/shadow-falcons.html">Shadow Falcons</a></td><td>8</td><td>6</td><td class="pct">0.571</td></tr>
-      <tr><td>4</td><td class="team-name"><a href="rosters/steel-titans.html">Steel Titans</a></td><td>6</td><td>8</td><td class="pct">0.429</td></tr>
-      <tr><td>5</td><td class="team-name"><a href="rosters/blaze-lions.html">Blaze Lions</a></td><td>4</td><td>10</td><td class="pct">0.286</td></tr>
-      <tr><td>6</td><td class="team-name"><a href="rosters/storm-sharks.html">Storm Sharks</a></td><td>3</td><td>11</td><td class="pct">0.214</td></tr>
+      <tr><td>1</td><td class="team-name">Globogym</td><td>12</td><td>2</td><td class="pct">0.857</td></tr>
+      <tr><td>2</td><td class="team-name">Iron Wolves</td><td>10</td><td>4</td><td class="pct">0.714</td></tr>
+      <tr><td>3</td><td class="team-name">Shadow Falcons</td><td>8</td><td>6</td><td class="pct">0.571</td></tr>
+      <tr><td>4</td><td class="team-name">Steel Titans</td><td>6</td><td>8</td><td class="pct">0.429</td></tr>
+      <tr><td>5</td><td class="team-name">Blaze Lions</td><td>4</td><td>10</td><td class="pct">0.286</td></tr>
+      <tr><td>6</td><td class="team-name">Storm Sharks</td><td>3</td><td>11</td><td class="pct">0.214</td></tr>
     </tbody>
   </table>
 
@@ -47,6 +45,7 @@
   </footer>
 
   <script>
+    // Debounce helper
     function debounce(fn, wait = 150) {
       let t;
       return (...args) => {
@@ -64,6 +63,7 @@
       });
     }
 
+    // Auto-sort + add roster links
     window.addEventListener('DOMContentLoaded', () => {
       const tbody = document.querySelector('#standingsTable tbody');
       const rows = Array.from(tbody.querySelectorAll('tr'));
@@ -76,14 +76,27 @@
       });
 
       rows.forEach((r, i) => {
+        // Update rank + win %
         r.children[0].textContent = i + 1;
         const wins = parseInt(r.children[2].textContent, 10) || 0;
         const losses = parseInt(r.children[3].textContent, 10) || 0;
         const pct = (wins + losses) > 0 ? (wins / (wins + losses)) : 0;
-        r.querySelector('.pct').textContent = pct.toFixed(3);
+        r.children[4].textContent = pct.toFixed(3);
+
+        // Create roster link
+        const teamCell = r.querySelector('.team-name');
+        const teamName = teamCell.textContent.trim();
+        const pageName = teamName.toLowerCase().replace(/\s+/g, '');
+        const rosterUrl = `rosters/${pageName}.html`;
+
+        // Make cell clickable
+        teamCell.innerHTML = `<a href="${rosterUrl}" class="team-link">${teamName}</a>`;
+
+        // Append row back
         tbody.appendChild(r);
       });
 
+      // Search handler
       const input = document.getElementById('searchInput');
       input.addEventListener('input', debounce(() => filterTeams(input.value), 120));
     });
