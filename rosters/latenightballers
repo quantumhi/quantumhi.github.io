@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Globogym Roster | HCIBB</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Embedded CSS -->
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #151515;
+      --accent: #e50914;
+      --text-light: #f5f5f5;
+      --text-muted: #888;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(229,9,20,0.25);
+      --transition: all 0.3s ease;
+    }
+
+    body { font-family:'Poppins',sans-serif; background:var(--bg-dark); color:var(--text-light); margin:0; padding:0; display:flex; flex-direction:column; align-items:center; min-height:100vh; }
+    header { width:100%; text-align:center; padding:2rem 1rem; background:linear-gradient(135deg,#111,#1a0000); box-shadow:var(--shadow); }
+    h1{color:var(--accent); font-weight:700; margin-bottom:0.3rem;} 
+    p.subtitle{color:var(--text-muted);}
+    .roster-container{width:90%; max-width:800px; margin:2rem auto; background:var(--bg-card); padding:2rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .roster-container h2{text-align:center; color:var(--accent); margin-bottom:1rem;}
+    .roster-table{width:100%; border-collapse:collapse; color:var(--text-light);}
+    .roster-table th{background:var(--accent); color:#fff; padding:0.75rem; text-transform:uppercase;}
+    .roster-table td{padding:0.75rem; text-align:center; border-bottom:1px solid #333;}
+    .roster-table tr:hover{background:#1e0000; transition:var(--transition);}
+    .back-button{display:inline-block; margin-top:1.5rem; padding:0.6rem 1rem; color:#fff; background:var(--accent); border-radius:var(--radius); text-decoration:none; transition:var(--transition);}
+    .back-button:hover{background:#b10710; transform:scale(1.05);}
+    footer{margin-top:auto; padding:1rem; font-size:0.9rem; color:var(--text-muted); text-align:center;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏀 Late Night Ballers</h1>
+    <p class="subtitle">Team Roster | 2025 Season</p>
+  </header>
+
+  <div class="roster-container">
+    <h2>Players</h2>
+    <table class="roster-table">
+      <thead>
+        <tr><th>#</th><th>Name</th><th>Position</th><th>Height</th><th>Year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Ben Stiller</td><td>Guard</td><td>6'1"</td><td>Senior</td></tr>
+        <tr><td>2</td><td>Vince Vaughn</td><td>Forward</td><td>6'4"</td><td>Senior</td></tr>
+        <tr><td>3</td><td>Justin Long</td><td>Guard</td><td>5'11"</td><td>Junior</td></tr>
+        <tr><td>4</td><td>Jason Bateman</td><td>Center</td><td>6'6"</td><td>Senior</td></tr>
+        <tr><td>5</td><td>Alan Tudyk</td><td>Forward</td><td>6'3"</td><td>Sophomore</td></tr>
+      </tbody>
+    </table>
+    <a href="../index.html" class="back-button">← Back to Standings</a>
+  </div>
+
+  <footer>© HCIBB 2025</footer>
+</body>
+</html>
