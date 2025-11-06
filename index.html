@@ -107,11 +107,16 @@
     </thead>
     <tbody>
       <tr><td>1</td><td class="team-name">Globogym</td><td>12</td><td>2</td><td class="pct">0.857</td></tr>
-      <tr><td>2</td><td class="team-name">Iron Wolves</td><td>10</td><td>4</td><td class="pct">0.714</td></tr>
-      <tr><td>3</td><td class="team-name">Shadow Falcons</td><td>8</td><td>6</td><td class="pct">0.571</td></tr>
-      <tr><td>4</td><td class="team-name">Steel Titans</td><td>6</td><td>8</td><td class="pct">0.429</td></tr>
-      <tr><td>5</td><td class="team-name">Blaze Lions</td><td>4</td><td>10</td><td class="pct">0.286</td></tr>
-      <tr><td>6</td><td class="team-name">Storm Sharks</td><td>3</td><td>11</td><td class="pct">0.214</td></tr>
+      <tr><td>2</td><td class="team-name">Mennis</td><td>10</td><td>3</td><td class="pct">0.769</td></tr>
+      <tr><td>3</td><td class="team-name">Late Night Ballers</td><td>9</td><td>4</td><td class="pct">0.692</td></tr>
+      <tr><td>4</td><td class="team-name">BNC</td><td>8</td><td>5</td><td class="pct">0.615</td></tr>
+      <tr><td>5</td><td class="team-name">Players Who Will</td><td>7</td><td>6</td><td class="pct">0.538</td></tr>
+      <tr><td>6</td><td class="team-name">Deez Nuts</td><td>6</td><td>7</td><td class="pct">0.462</td></tr>
+      <tr><td>7</td><td class="team-name">Buckets for Jesus</td><td>5</td><td>8</td><td class="pct">0.385</td></tr>
+      <tr><td>8</td><td class="team-name">Stoop Sittas</td><td>4</td><td>9</td><td class="pct">0.308</td></tr>
+      <tr><td>9</td><td class="team-name">Ball Don't Lie</td><td>3</td><td>10</td><td class="pct">0.231</td></tr>
+      <tr><td>10</td><td class="team-name">The Haverford Basketball Team</td><td>2</td><td>11</td><td class="pct">0.154</td></tr>
+      <tr><td>11</td><td class="team-name">Women's Club Soccer</td><td>1</td><td>12</td><td class="pct">0.077</td></tr>
     </tbody>
   </table>
 
@@ -135,6 +140,7 @@
       const tbody = document.querySelector('#standingsTable tbody');
       const rows = Array.from(tbody.querySelectorAll('tr'));
 
+      // Sort automatically by wins
       rows.sort((a,b)=> parseInt(b.children[2].textContent)-parseInt(a.children[2].textContent));
 
       rows.forEach((r,i)=>{
@@ -143,9 +149,9 @@
         const losses=parseInt(r.children[3].textContent);
         r.children[4].textContent=((wins/(wins+losses))||0).toFixed(3);
 
-        // auto link
+        // auto link to roster page
         const nameCell = r.querySelector('.team-name');
-        const pageName = nameCell.textContent.toLowerCase().replace(/\s+/g,'');
+        const pageName = nameCell.textContent.toLowerCase().replace(/[^a-z0-9]/g,'');
         nameCell.innerHTML=`<a href="rosters/${pageName}.html">${nameCell.textContent}</a>`;
 
         tbody.appendChild(r);
